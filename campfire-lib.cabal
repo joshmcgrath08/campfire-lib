@@ -1,0 +1,59 @@
+name:                campfire-lib
+version:             0.1.0.0
+author:              Josh McGrath
+maintainer:          josh.mcgrath08@gmail.com
+build-type:          Simple
+cabal-version:       >= 1.10
+
+library
+   exposed-modules:
+    Network.Campfire
+    Network.Campfire.Test
+  other-modules:
+    Network.Campfire.Account
+    Network.Campfire.Common
+    Network.Campfire.Message
+    Network.Campfire.Request
+    Network.Campfire.Room
+    Network.Campfire.Search
+    Network.Campfire.Types
+    Network.Campfire.Types.TH
+    Network.Campfire.Upload
+    Network.Campfire.User
+  build-depends:
+    base >= 4.6 && < 4.7,
+    bytestring,
+    http-conduit,
+    http-types,
+    conduit,
+    text,
+    aeson,
+    time,
+    mtl,
+    old-locale
+  default-language:
+    Haskell2010
+  ghc-options: -Wall -fno-warn-unused-do-bind
+  default-extensions: OverloadedStrings,
+                      MultiParamTypeClasses,
+                      FunctionalDependencies,
+                      ScopedTypeVariables,
+                      FlexibleInstances,
+                      FlexibleContexts
+  other-extensions: TemplateHaskell
+
+-- Executable so it can prompt user for API token and URL to use
+executable campfire-lib-test
+  main-is: Test.hs
+  build-depends:
+    base >=4.6 && < 4.7,
+    campfire-lib >= 0.1.0.0,
+    HUnit,
+    aeson,
+    conduit,
+    text,
+    filepath,
+    http-conduit
+  hs-source-dirs: mains
+  default-language: Haskell2010
+  ghc-options: -Wall -fno-warn-unused-do-bind
