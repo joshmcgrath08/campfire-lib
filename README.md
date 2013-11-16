@@ -1,4 +1,4 @@
 campfire-lib
 ============
 
-JSON bindings for Campfire (https://campfirenow.com/)
+JSON bindings for Campfire in Haskell (https://campfirenow.com/)
